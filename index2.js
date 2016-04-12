@@ -4,7 +4,7 @@ var os = require('os');
 	var output_train = [];
 	var output_test = [];
 	var output_all =[];
-fs.readFile('/Users/danielzehe/Dropbox/perfect\ date/klarchiv_03126_daily_his/produkt_klima_Tageswerte_18810101_20151231_03126.txt','utf8',function(err,data){
+fs.readFile('/home/dzehe/Downloads/perfect date/klarchiv_03126_daily_his/produkt_klima_Tageswerte_18810101_20151231_03126.txt','utf8',function(err,data){
 	var lines =data.split(os.EOL);
 
 

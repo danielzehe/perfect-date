@@ -9,8 +9,8 @@ fs.readFile('./test50.json','utf8',function(err,data){
 	console.log('data loaded... starting training');
 	trainer.train(traindata,{
 		iterations:50,
-		error:.00001,
-		rate:[0.01,0.001],
+		error:.0001,
+		rate:[0.01,0.001,0.01],
 		log:true,
 		cost:syn.Trainer.cost.MSE
 	});
@@ -25,7 +25,7 @@ fs.readFile('./test50.json','utf8',function(err,data){
 	var outputs =[];
 	for(var i=0;i<traindata.length;i++){
 	 outputs.push({
-	 	input: traindata[i].input,
+	 	// input: traindata[i].input,
 		output: perceptron.activate(traindata[i].input)[0].toFixed(3),
 		target: traindata[i].output
 	});
