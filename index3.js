@@ -8,19 +8,22 @@ fs.readFile('./test50.json','utf8',function(err,data){
 
 	console.log('data loaded... starting training');
 	trainer.train(traindata,{
-		iterations:500,
+		iterations:50,
 		error:.00001,
-		rate:0.01,
+		rate:[0.01,0.001],
 		log:true,
 		cost:syn.Trainer.cost.MSE
 	});
 
 
 	console.log('training done');
-
+	fs.writeFile('network.json',JSON.stringify(perceptron.toJSON()),function(err){
+		if(err) throw err;
+		console.log('all done');
+	});
 
 	var outputs =[];
-	for(var i=0;i<300;i++){
+	for(var i=0;i<traindata.length;i++){
 	 outputs.push({
 	 	input: traindata[i].input,
 		output: perceptron.activate(traindata[i].input)[0].toFixed(3),

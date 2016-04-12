@@ -47,7 +47,7 @@ fs.readFile('/Users/danielzehe/Dropbox/perfect\ date/klarchiv_03126_daily_his/pr
 		output_all.push(outputobject);
 
 
-		if(i%10==0){
+		if(i%2==0){
 		// if(i==1){
 			output_test.push(outputobject);
 		}
